@@ -10,52 +10,59 @@ function computerPlay(){
 }
 
 //ROCK PAPER SCISSORS FUNCTION
+const winLoss = document.querySelector('#win-loss');
+const compChoice = document.querySelector('#comp-choice');
+
 let score = 0;
 let computerScore = 0;
+let wins = 0;
+let loss = 0;
     function playRound(playerSelection,computerSelection){
 
         if (score == 5 && computerScore<5){
-            alert('You Won!')
+            wins++;
+            alert(`You Won! damn hacks`);
             score = 0;
             computerScore = 0;
-            
+            finalMessage.textContent=`${wins} to ${loss}!`
         } 
         if (computerScore == 5 && score<5){
-            alert('you Lost!')
+            loss++;
+            alert('You Lost! haha loser');
             score = 0;
             computerScore = 0;
+            finalMessage.textContent=`${wins} to ${loss}!`
         }
 
     if (playerSelection == 'rock') {
         if (computerSelection == 'rock') {
-            return(`TIE! Rock Doesn't Beat Rock.`);
+            return(`Rock Doesn't Beat Rock.`);
         } else if (computerSelection == 'paper') {
             computerScore++;
-            return(`YOU LOSE! Paper Beats Rock.`);
+            return(`Paper Beats Rock.`);
         } else if (computerSelection == 'scissors') {
             score++;
-            return(`YOU WIN! Rock Beats Scissors.`);
-
+            return(`Rock Beats Scissors.`);
         }
     } else if (playerSelection == 'paper') {
         if (computerSelection == 'rock') {
             score++;
-            return('YOU WIN! Paper Beats Rock.');
+            return('Paper Beats Rock.');
         } else if (computerSelection == 'paper') {
-            return(`TIE! Paper Doesn't Beat Paper.`)
+            return(`Paper Doesn't Beat Paper.`)
         } else if (computerSelection == 'scissors') {
             computerScore++;
-            return('YOU LOSE! Scissors Beats Paper.')
+            return('Scissors Beats Paper.')
         }
     }   else if (playerSelection == 'scissors') {
         if (computerSelection == 'rock') {
             computerScore++;
-            return('YOU LOSE! Rock Beats Scissors.')
+            return('Rock Beats Scissors.')
         } else if (computerSelection == 'paper') {
             score++;
-            return('YOU WIN! Scissors Beats Rock.')
+            return('Scissors Beats Rock.')
         } else if (computerSelection == 'scissors') {
-            return('TIE! Scissors Can Not Cut Scissors.')
+            return('Scissors Can Not Cut Scissors.')
         }
     }
  }
