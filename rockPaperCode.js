@@ -21,14 +21,14 @@ let loss = 0;
 
         if (score == 5 && computerScore<5){
             wins++;
-            alert(`You Won! damn hacks`);
+            alert(`You Won!`);
             score = 0;
             computerScore = 0;
             finalMessage.textContent=`${wins} to ${loss}!`
         } 
         if (computerScore == 5 && score<5){
             loss++;
-            alert('You Lost! haha loser');
+            alert('You Lost!');
             score = 0;
             computerScore = 0;
             finalMessage.textContent=`${wins} to ${loss}!`
