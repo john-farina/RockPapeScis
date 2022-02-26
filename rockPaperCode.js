@@ -18,6 +18,7 @@ let computerScore = 0;
             alert('You Won!')
             score = 0;
             computerScore = 0;
+            
         } 
         if (computerScore == 5 && score<5){
             alert('you Lost!')
