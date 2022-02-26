@@ -95,8 +95,9 @@ playScore.textContent=`${score}`;
 });
 
 
-if (compScore<playScore){
-    finalMessage.textContent='nice ur winning';
+if (computerScore==5){
+    body.style.backgroundColor='red';
+    alert('you lost')
 }
 
 // let round = 1;
