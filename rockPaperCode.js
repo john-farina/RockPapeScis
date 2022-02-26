@@ -34,6 +34,17 @@ let loss = 0;
             finalMessage.textContent=`${wins} to ${loss}!`
         }
 
+        if (wins == loss){
+            finalMessage.style.color='black';
+            finalMessage.style.fontWeight='320';
+        } else if (wins>loss){
+            finalMessage.style.color='green';
+            finalMessage.style.fontWeight='900';
+        } else if (wins<loss){
+            finalMessage.style.color='red'
+            finalMessage.style.fontWeight='500';
+        }
+
     if (playerSelection == 'rock') {
         if (computerSelection == 'rock') {
             return(`Rock Doesn't Beat Rock.`);
@@ -72,6 +83,7 @@ const displayDiv = document.querySelector('#displayDiv');
 displayDiv.style.backgroundColor="rgb(188, 253, 251)";
 displayDiv.style.textAlign='center';
 displayDiv.style.padding='10px 20px';
+displayDiv.style.fontFamily='Oswald, sans-serrif';
 
 //COMPUTER SCORE BOX
 const compScore = document.querySelector('#comp-score');
@@ -92,7 +104,6 @@ let computerSelection = computerPlay();
 displayDiv.textContent=(playRound(playerSelection,computerSelection));
 compScore.textContent=`${computerScore}`;
 playScore.textContent=`${score}`;
-finalMessage.textContent=`${round}`;
 });
 
 //PAPER BUTTON

@@ -12,16 +12,28 @@ button {
     border-radius: 10px;
 }
 
+#top-content{
+    margin-top: 10px;
+}
+
 .header {
     text-align: center;
     margin-bottom: -20px;
+    font-family: 'Oswald', sans-serif;
+}
+
+#final-message{
+    font-family: 'Oswald', sans-serif;
+    font-weight: 320;
 }
 
 #main-content{
     display: flex;
     flex-direction: row;
     gap: 20px;
-    justify-content: center;
+    justify-content: start;
+    align-content: center;
+    margin-top: 30px;
 }
 
 #container1 {
@@ -31,6 +43,14 @@ button {
     padding: 2rem;
     align-items: center;
     border-radius: 10px;
+    font-family: 'Oswald', sans-serif;
+    font-weight: 320;
+}
+
+#btn-container {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
 }
 
 .scores {
@@ -42,6 +62,7 @@ button {
 #player-score {
     margin-top: -10px;
     font-size: 40px;
+    font-family: 'Orbitron', 'Oswald', sans-serif;
 }
 
 #container2 {
