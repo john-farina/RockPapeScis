@@ -13,6 +13,18 @@ function computerPlay(){
 let score = 0;
 let computerScore = 0;
     function playRound(playerSelection,computerSelection){
+
+        if (score == 5 && computerScore<5){
+            alert('You Won!')
+            score = 0;
+            computerScore = 0;
+        } 
+        if (computerScore == 5 && score<5){
+            alert('you Lost!')
+            score = 0;
+            computerScore = 0;
+        }
+
     if (playerSelection == 'rock') {
         if (computerSelection == 'rock') {
             return(`TIE! Rock Doesn't Beat Rock.`);
@@ -45,12 +57,13 @@ let computerScore = 0;
             return('TIE! Scissors Can Not Cut Scissors.')
         }
     }
-}
+ }
 
 //DIV WHERE IT SAYS YOU WON OR NOT
 const displayDiv = document.querySelector('#displayDiv');
-displayDiv.style.backgroundColor="cyan";
+displayDiv.style.backgroundColor="rgb(188, 253, 251)";
 displayDiv.style.textAlign='center';
+displayDiv.style.padding='10px 20px';
 
 //COMPUTER SCORE BOX
 const compScore = document.querySelector('#comp-score');
@@ -58,11 +71,10 @@ compScore.style.color='red';
 
 //PLAYER SCORE BOX
 const playScore = document.querySelector('#player-score');
-playScore.style.color='red';
+playScore.style.color='green';
 
 const finalMessage = document.querySelector('#final-message');
-let round = 1;
-finalMessage.textContent=`${round}`;
+
 
 //ROCK BUTTON
 const rockBtn = document.querySelector('#rockBtn');
@@ -72,6 +84,7 @@ let computerSelection = computerPlay();
 displayDiv.textContent=(playRound(playerSelection,computerSelection));
 compScore.textContent=`${computerScore}`;
 playScore.textContent=`${score}`;
+finalMessage.textContent=`${round}`;
 });
 
 //PAPER BUTTON
@@ -94,11 +107,6 @@ compScore.textContent=`${computerScore}`;
 playScore.textContent=`${score}`;
 });
 
-
-if (computerScore==5){
-    body.style.backgroundColor='red';
-    alert('you lost')
-}
 
 // let round = 1;
 
