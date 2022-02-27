@@ -25,6 +25,7 @@ button {
 #final-message{
     font-family: 'Oswald', sans-serif;
     font-weight: 320;
+    margin-top: -10px;
 }
 
 #main-content{
@@ -58,13 +59,6 @@ button {
    font-weight: bolder;
 }
 
-#comp-score,
-#player-score {
-    margin-top: -10px;
-    font-size: 40px;
-    font-family: 'Orbitron', 'Oswald', sans-serif;
-}
-
 #container2 {
     display: flex;
     flex-direction: column;
@@ -73,4 +67,30 @@ button {
     gap: 20px;
     align-items: center;
     border-radius: 2px;
+}
+
+#comp-score,
+#player-score {
+    margin-top: -10px;
+    font-size: 40px;
+    font-family: 'Orbitron', 'Oswald', sans-serif;
+}
+
+#computer-selection{
+    color: red;
+}
+
+#player-selection{
+    color: green;
+}
+
+#computer-selection,
+#player-selection {
+    font-family: 'Oswald', sans-serif;
+    margin-top: -32px;
+    font-weight: 800;
+}
+
+@media screen and (max-width: 480px){
+
 }

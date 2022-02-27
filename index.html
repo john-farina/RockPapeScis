@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type ="image/x-icon" href="/images/paperlogo.png">
     <title>Rock Paper Scissors</title>
     <script src="/rockPaperCode.js" defer></script>
     <link rel="stylesheet" href="/styles.css">
@@ -16,7 +17,8 @@
 <body>
     <div id="top-content"></div>
     <h1 class="header">Rock, Paper, Scissors!</h1>
-        <h2 id="final-message">0 to 0!</h2>
+    <p>First One To 5 Points Wins The Round!</p>
+        <h2 id="final-message">0 Rounds Played</h2>
     </div>
 
 <div id="main-content">
@@ -24,6 +26,7 @@
     <div id="container1">
     <p class="scores">Your Score</p>
     <h3 id="player-score">0</h3>
+    <p id="player-selection"></p>
     </div>
 
     <div id="container2">
@@ -39,7 +42,7 @@
 <div id="container1">
     <p class="scores">Comp Score</p>
     <h3 id="comp-score">0</h3>
-    <h5 id="comp-choice"></h5>
+    <p id="computer-selection"></p>
     </div>
 
 </div>

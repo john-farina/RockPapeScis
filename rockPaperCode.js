@@ -1,6 +1,6 @@
 function computerPlay(){
     let random = (Math.random()*9)+1;
-    if (random<=3){
+    if (random<=4){
         return('rock');
     } else if (random>=4 && random<=7){
         return('paper');
@@ -9,16 +9,26 @@ function computerPlay(){
     }
 }
 
-//ROCK PAPER SCISSORS FUNCTION
-const winLoss = document.querySelector('#win-loss');
-const compChoice = document.querySelector('#comp-choice');
+//DIV WHERE IT SAYS YOU WON OR NOT
+const displayDiv = document.querySelector('#displayDiv');
+displayDiv.style.backgroundColor="rgb(188, 253, 251)";
+displayDiv.style.textAlign='center';
+displayDiv.style.padding='10px 20px';
+displayDiv.style.fontFamily='Oswald, sans-serrif';
 
+//ROCK PAPER SCISSORS FUNCTION
 let score = 0;
 let computerScore = 0;
 let wins = 0;
 let loss = 0;
+
+const compSelec = document.querySelector('#computer-selection');
+const playSelec = document.querySelector('#player-selection');
+
     function playRound(playerSelection,computerSelection){
 
+        //COUNTS SCORE AND ALERTS FOR FIRST TO GET 5
+        //ALSO REMOVES SCORE, and PUTS WINS TO LOSES
         if (score == 5 && computerScore<5){
             wins++;
             alert(`You Won!`);
@@ -33,57 +43,71 @@ let loss = 0;
             computerScore = 0;
             finalMessage.textContent=`${wins} to ${loss}!`
         }
-
-        if (wins == loss){
-            finalMessage.style.color='black';
-            finalMessage.style.fontWeight='320';
-        } else if (wins>loss){
-            finalMessage.style.color='green';
-            finalMessage.style.fontWeight='900';
-        } else if (wins<loss){
-            finalMessage.style.color='red'
-            finalMessage.style.fontWeight='500';
-        }
+            //STYLES THE WINS AND LOSS SECTION
+            if (wins == loss){
+                finalMessage.style.color='black';
+                finalMessage.style.fontWeight='320';
+            } else if (wins>loss){
+                finalMessage.style.color='green';
+                finalMessage.style.fontWeight='900';
+            } else if (wins<loss){
+                finalMessage.style.color='red'
+                finalMessage.style.fontWeight='500';
+            }
 
     if (playerSelection == 'rock') {
+    playSelec.textContent='Rock!'
         if (computerSelection == 'rock') {
-            return(`Rock Doesn't Beat Rock.`);
+            compSelec.textContent='Rock!';
+            displayDiv.style.backgroundColor="rgb(188, 253, 251)";
+            return(`TIE! Rock Doesn't Beat Rock.`);
         } else if (computerSelection == 'paper') {
             computerScore++;
-            return(`Paper Beats Rock.`);
+            compSelec.textContent='Paper!';
+            displayDiv.style.backgroundColor='red';
+            return(`YOU LOST! Paper Beats Rock.`);
         } else if (computerSelection == 'scissors') {
             score++;
-            return(`Rock Beats Scissors.`);
+            compSelec.textContent='Scissors!';
+            displayDiv.style.backgroundColor='green';
+            return(`YOU WON! Rock Beats Scissors.`);
         }
     } else if (playerSelection == 'paper') {
+    playSelec.textContent='Paper!'
         if (computerSelection == 'rock') {
             score++;
-            return('Paper Beats Rock.');
+            compSelec.textContent='Rock!';
+            displayDiv.style.backgroundColor='green';
+            return('YOU WIN! Paper Beats Rock.');
         } else if (computerSelection == 'paper') {
-            return(`Paper Doesn't Beat Paper.`)
+            compSelec.textContent='Paper!';
+            displayDiv.style.backgroundColor="rgb(188, 253, 251)";
+            return(`TIE! Paper Doesn't Beat Paper.`)
         } else if (computerSelection == 'scissors') {
             computerScore++;
-            return('Scissors Beats Paper.')
+            compSelec.textContent='Scissors!';
+            displayDiv.style.backgroundColor='red';
+            return('YOU LOST! Scissors Beats Paper.')
         }
     }   else if (playerSelection == 'scissors') {
+    playSelec.textContent='Scissors!'
         if (computerSelection == 'rock') {
             computerScore++;
-            return('Rock Beats Scissors.')
+            compSelec.textContent='Rock!';
+            displayDiv.style.backgroundColor='red';
+            return('YOU LOST! Rock Beats Scissors.')
         } else if (computerSelection == 'paper') {
             score++;
-            return('Scissors Beats Rock.')
+            compSelec.textContent='Paper!';
+            displayDiv.style.backgroundColor='green';
+            return('YOU WIN! Scissors Cuts Rock.')
         } else if (computerSelection == 'scissors') {
-            return('Scissors Can Not Cut Scissors.')
+            compSelec.textContent='Scissors!';
+            displayDiv.style.backgroundColor="rgb(188, 253, 251)";
+            return('TIE! Scissors Can Not Cut Scissors.')
         }
     }
  }
-
-//DIV WHERE IT SAYS YOU WON OR NOT
-const displayDiv = document.querySelector('#displayDiv');
-displayDiv.style.backgroundColor="rgb(188, 253, 251)";
-displayDiv.style.textAlign='center';
-displayDiv.style.padding='10px 20px';
-displayDiv.style.fontFamily='Oswald, sans-serrif';
 
 //COMPUTER SCORE BOX
 const compScore = document.querySelector('#comp-score');
