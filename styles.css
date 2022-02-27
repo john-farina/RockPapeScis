@@ -12,7 +12,7 @@ button {
     border-radius: 10px;
 }
 
-#top-content{
+#top-content {
     margin-top: 10px;
 }
 
@@ -22,13 +22,13 @@ button {
     font-family: 'Oswald', sans-serif;
 }
 
-#final-message{
+#final-message {
     font-family: 'Oswald', sans-serif;
     font-weight: 320;
     margin-top: -10px;
 }
 
-#main-content{
+#main-content {
     display: flex;
     flex-direction: row;
     gap: 20px;
@@ -55,8 +55,8 @@ button {
 }
 
 .scores {
-   font-size: 20px;
-   font-weight: bolder;
+    font-size: 20px;
+    font-weight: bolder;
 }
 
 #container2 {
@@ -76,11 +76,11 @@ button {
     font-family: 'Orbitron', 'Oswald', sans-serif;
 }
 
-#computer-selection{
+#computer-selection {
     color: red;
 }
 
-#player-selection{
+#player-selection {
     color: green;
 }
 
@@ -91,6 +91,5 @@ button {
     font-weight: 800;
 }
 
-@media screen and (max-width: 480px){
-
+@media screen and (max-width: 480px) {
 }
