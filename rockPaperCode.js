@@ -21,12 +21,10 @@ let score = 0;
 let computerScore = 0;
 let wins = 0;
 let loss = 0;
-
 const compSelec = document.querySelector('#computer-selection');
 const playSelec = document.querySelector('#player-selection');
 
     function playRound(playerSelection,computerSelection){
-
         //COUNTS SCORE AND ALERTS FOR FIRST TO GET 5
         //ALSO REMOVES SCORE, and PUTS WINS TO LOSES
         if (score == 5 && computerScore<5){
