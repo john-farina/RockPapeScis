@@ -55,19 +55,6 @@ const playSelec = document.querySelector('#player-selection');
                 finalMessage.style.fontWeight='500';
             }
 
-            //server taunts that i wanted to add lol
-            if (wins+loss == 10){
-                alert('dang you played 10 rounds? jeeezzzz')
-            }
-            if (wins+loss == 20){
-                alert('wow seriously 20 rounds? get a life lmao')
-            }
-            if (wins+loss == 30){
-                alert('okay 30 rounds? now ur messing with me')
-            }
-            if (wins+loss == 100){
-                alert('okay this is not okay anymore, 100 rounds is too much. go outside')
-            }
 
     if (playerSelection == 'rock') {
     playSelec.textContent='Rock!'
